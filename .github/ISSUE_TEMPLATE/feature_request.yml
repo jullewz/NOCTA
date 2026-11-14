@@ -1,0 +1,23 @@
+name: Language or tooling proposal
+description: A new feature, built-in function or tool improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What is hard or impossible to write today? Show the current code.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed syntax or behaviour
+      description: Show how the code would look with your proposal.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

@@ -1,0 +1,38 @@
+name: Bug report
+description: A program behaves differently from the documentation, or the compiler or VM crashes
+labels: [bug]
+body:
+  - type: textarea
+    id: program
+    attributes:
+      label: Smallest program that shows the problem
+      description: Paste the Nocta code. A playground share link works too.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected and what happened
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where
+      options: [CLI (nocta run / test / repl), Browser playground, Embedding API, Several]
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Nocta version, Node or browser version, and operating system
+      placeholder: "nocta 0.1.0, Node 22 on Windows 10"
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Full output
+      description: Compiler diagnostics, runtime error and stack trace.
+      render: text
