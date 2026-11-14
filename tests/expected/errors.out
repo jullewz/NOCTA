@@ -1,0 +1,8 @@
+ok, new balance 70
+refused: insufficient funds: balance 10, wanted 50
+refused: account 3 is frozen
+Ok(2.5)
+Err("division by zero")
+age 42
+invalid (not_a_number): "abc"
+invalid (out_of_range): "-3"

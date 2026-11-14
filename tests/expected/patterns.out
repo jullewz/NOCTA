@@ -1,0 +1,13 @@
+expression: (1 * x + (0 + 3 * --y))
+simplified: (x + 3 * y)
+value:      19
+error: unbound variable z
+an empty list
+a list with just 7
+a list starting 1, 2 and 2 more
+Ada, an adult
+Kid, age unknown or under 18
+zero
+a digit
+the number 42
+something else: "text"

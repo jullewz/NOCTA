@@ -1,0 +1,8 @@
+items in stock: keyboard, monitor, projector, headset
+stock value: 3157
+audio    1 item(s), average price 99.00
+display  2 item(s), average price 384.50
+input    2 item(s), average price 57.00
+cheapest: mouse, most expensive price: 520
+mouse stock after restock: 25
+{"name":"keyboard","category":"input","price":79,"stock":12}
