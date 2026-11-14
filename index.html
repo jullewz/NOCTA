@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nocta playground</title>
+    <meta
+      name="description"
+      content="Nocta: a small, expressive programming language with pattern matching, closures and clear error messages. Run it in your browser."
+    />
+    <meta name="color-scheme" content="dark" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2307070a'/%3E%3Cpath d='M9 23V9l14 14V9' stroke='%23a78bfa' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true">
+          <path
+            d="M9 23V9l14 14V9"
+            stroke="currentColor"
+            stroke-width="3"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <span class="name">nocta</span>
+        <span class="tag">playground</span>
+      </div>
+      <div class="actions">
+        <label class="select">
+          <span class="sr">Example</span>
+          <select id="examples" aria-label="Load an example"></select>
+        </label>
+        <button id="run" class="primary" title="Run (Ctrl+Enter)">Run <kbd>Ctrl ↵</kbd></button>
+        <button id="test" title="Run the test blocks (Ctrl+Shift+Enter)">Test</button>
+        <button id="share" title="Copy a link with this code">Share</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="pane editor-pane" aria-label="Editor">
+        <div class="pane-head">
+          <span id="filename">main.nc</span>
+          <span id="cursor" class="muted">1:1</span>
+        </div>
+        <div class="editor" id="editor">
+          <div class="gutter" id="gutter" aria-hidden="true"></div>
+          <div class="code">
+            <pre class="highlight" id="highlight" aria-hidden="true"></pre>
+            <textarea
+              id="source"
+              spellcheck="false"
+              autocapitalize="off"
+              autocomplete="off"
+              autocorrect="off"
+              aria-label="Nocta source code"
+            ></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="pane output-pane" aria-label="Results">
+        <div class="tabs" role="tablist">
+          <button role="tab" data-tab="output" aria-selected="true">Output</button>
+          <button role="tab" data-tab="problems" aria-selected="false">
+            Problems <span id="problem-count" class="count" hidden></span>
+          </button>
+          <button role="tab" data-tab="bytecode" aria-selected="false">Bytecode</button>
+        </div>
+        <div class="panel" id="panel-output" role="tabpanel"><pre id="output" class="console"></pre></div>
+        <div class="panel" id="panel-problems" role="tabpanel" hidden><ul id="problems" class="problems"></ul></div>
+        <div class="panel" id="panel-bytecode" role="tabpanel" hidden>
+          <pre id="bytecode" class="console bytecode"></pre>
+        </div>
+        <footer class="status">
+          <span id="status">Ready</span>
+          <span id="stats" class="muted"></span>
+        </footer>
+      </section>
+    </main>
+
+    <footer class="credit">
+      Nocta is open source under the MIT license. Designed, developed and maintained by jullewz.
+    </footer>
+    <div id="toast" class="toast" role="status" hidden></div>
+    <script type="module" src="dist/src/web/playground.js"></script>
+  </body>
+</html>

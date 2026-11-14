@@ -1,0 +1,58 @@
+{
+  "name": "nocta-lang",
+  "version": "0.1.0",
+  "description": "Nocta: a small, expressive programming language with a bytecode compiler, a virtual machine and a browser playground.",
+  "type": "module",
+  "license": "MIT",
+  "author": "jullewz (https://github.com/jullewz)",
+  "homepage": "https://github.com/jullewz/nocta",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jullewz/nocta.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jullewz/nocta/issues"
+  },
+  "keywords": [
+    "programming-language",
+    "compiler",
+    "interpreter",
+    "bytecode",
+    "virtual-machine",
+    "pattern-matching",
+    "repl",
+    "playground"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "nocta": "dist/src/cli/main.js"
+  },
+  "files": [
+    "dist/src",
+    "examples",
+    "index.html",
+    "styles.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch",
+    "test": "npm run build && node --test \"dist/tests/**/*.test.js\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "start": "npm run build && node scripts/serve.mjs",
+    "serve": "node scripts/serve.mjs",
+    "site": "npm run build && node scripts/build-site.mjs",
+    "nocta": "node dist/src/cli/main.js",
+    "docs": "npm run build && node scripts/stdlib-docs.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "prettier": "^3.3.0",
+    "typescript": "^6.0.0"
+  }
+}
